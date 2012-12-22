@@ -1,0 +1,13 @@
+;indel noise, columns 3 (indels), 8 (unique), 9 (unique), 13 (lowfreq), 17 (indels) and 19 (unique) (based 1) should be removed
+>fa1
+AE-DCGPTVCSRGFRN-LTG
+>fa2
+RK-DCGATSCSRGFRN-LSG
+>fa3
+RTEDCAASSCSKCFRNRLPG
+>fa4
+RE-DCGPPKCSRCIRN-LKG
+>fa5
+RK-DCGPKSCSRAFRN-LSG
+>fa6
+CEEECGPTPCSRAFRNRLSG
