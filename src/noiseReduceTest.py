@@ -21,6 +21,6 @@ for root, dirs, files in os.walk(controlDir):
         else:
             resultFilename = name + '_result'
         resultFilePath = os.path.join(resultDir, resultFilename)
-        print resultFilePath
+        #print resultFilePath
         subprocess.call(['python', 'src/noiseReduce.py', testFilePath, resultFilePath])
 

@@ -31,7 +31,8 @@ def main(args):
         seq = entry[1]
         seqRec = SeqRecord(Seq(seq), id=acc, description='')
         SeqIO.write(seqRec, outStream, 'fasta')
-    
+
+    outStream.close()    
 
 def denoise(entries):
 
@@ -53,6 +54,7 @@ def denoise(entries):
 def removeHighIndel(entries, columns):
     entryCount = len(entries)
     THRESHOLD_RATIO = 0.5
+    colRemove = list()
     for col in columns:
         indelCount = 0
         for entry in entries:
@@ -61,12 +63,16 @@ def removeHighIndel(entries, columns):
                 indelCount += 1
         indelRatio = float(indelCount)/entryCount
         if (indelRatio > THRESHOLD_RATIO):
-            columns.remove(col)
+            colRemove.append(col)
 
-def removeHighUnique(entries, colums):
+    for col in colRemove:
+        columns.remove(col)
+
+def removeHighUnique(entries, columns):
     entryCount = len(entries)
     THRESHOLD_RATIO = 0.5
-    for col in colums:
+    colRemove = list()
+    for col in columns:
         symbolPresence = dict()
         for entry in entries:
             seq = entry[1]
@@ -74,12 +80,16 @@ def removeHighUnique(entries, colums):
         uniqueSymbols = len(symbolPresence)
         uniqueRatio = float(uniqueSymbols)/entryCount
         if (uniqueRatio > THRESHOLD_RATIO):
-            colums.remove(col)
+            colRemove.append(col)
+    
+    for col in colRemove:
+        columns.remove(col)
 
 
-def removeLowFreqs(entries, colums):
+def removeLowFreqs(entries, columns):
     MIN_COUNT = 3
-    for col in colums:
+    colRemove = list()
+    for col in columns:
         symbolCount = dict()
         for entry in entries:
             seq = entry[1]
@@ -89,7 +99,10 @@ def removeLowFreqs(entries, colums):
         symbolCount[INDEL_CHAR] = 0
         freqMax = max(symbolCount.values())
         if (freqMax < MIN_COUNT):
-            colums.remove(col)
+            colRemove.append(col)
+    
+    for col in colRemove:
+        columns.remove(col)
 
 args = sys.argv[1:]
 argsLen = len(args)
