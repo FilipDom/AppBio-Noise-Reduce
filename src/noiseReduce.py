@@ -77,7 +77,8 @@ def removeHighUnique(entries, columns):
         for entry in entries:
             seq = entry[1]
             symbolPresence[seq[col]] = 1
-        uniqueSymbols = len(symbolPresence)
+        symbolPresence[INDEL] = 0
+        uniqueSymbols = sum(symbolPresence.itervalues())
         uniqueRatio = float(uniqueSymbols)/entryCount
         if (uniqueRatio > THRESHOLD_RATIO):
             colRemove.append(col)
@@ -95,8 +96,8 @@ def removeLowFreqs(entries, columns):
             seq = entry[1]
             symbol = seq[col]
             symbolCount[symbol] = symbolCount.get(symbol, 0) + 1
-        INDEL_CHAR = '-'
-        symbolCount[INDEL_CHAR] = 0
+        
+        symbolCount[INDEL] = 0
         freqMax = max(symbolCount.values())
         if (freqMax < MIN_COUNT):
             colRemove.append(col)
