@@ -1,0 +1,13 @@
+;all columns are noisy, all should be removed, causing an error to be thrown
+>fa1
+AE-DCCPTVCARG-QN-LT-
+>fa2
+RK-DCCATS-RRGFQN-LS-
+>fa3
+RTEG-APSS-QKC-NRRLPG
+>fa4
+CE-W-APPKCSSCINQ-QK-
+>fa5
+AK-R-GTKS-SAA-RI-RSG
+>fa6
+CTEE-GSTP-SRA-RNRSS-

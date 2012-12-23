@@ -3,7 +3,13 @@ import subprocess
 from Bio import SeqIO
 
 def calcTrees(inFilePath, treeNoisyOut, treeDenoisedOut):
-
+    
+    denoisedFileName = 'tmp_denoised.fa'
+    try:
+        subprocess.check_call(['python', 'src/noiseReduce.py', inFilePath, denoisedFileName])
+    except subprocess.CalledProcessError as e:
+        raise RuntimeError(e.message)
+    
     calcTree(inFilePath, treeNoisyOut)
 
     denoisedFileName = 'tmp_denoised.fa'
@@ -25,7 +31,7 @@ def calcTree(inFilePath, outFile):
     writeEntries(phylipInputFile, entries)
     phylipInputFile.close()
     
-    subprocess.call(['rm', 'outfile'])
+    subprocess.call(['rm', '-f', 'outfile'])
     protdist = subprocess.Popen(['protdist'], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
     protdist.stdin.write('Y\n')
     protdist.stdin.write('\n')
@@ -36,7 +42,7 @@ def calcTree(inFilePath, outFile):
     protdist.wait()
 
     subprocess.call(['mv', 'outfile', 'infile'])
-    subprocess.call(['rm', 'outtree'])
+    subprocess.call(['rm', '-f', 'outtree'])
     neighbor = subprocess.Popen(['neighbor'], stdin=subprocess.PIPE, stdout=subprocess.PIPE)
     neighbor.stdin.write('Y\n')
     neighbor.stdin.write('\n')

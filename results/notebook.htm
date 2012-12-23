@@ -14,17 +14,17 @@ xmlns="http://www.w3.org/TR/REC-html40">
  <o:DocumentProperties>
   <o:Author> </o:Author>
   <o:LastAuthor> </o:LastAuthor>
-  <o:Revision>11</o:Revision>
-  <o:TotalTime>288</o:TotalTime>
+  <o:Revision>13</o:Revision>
+  <o:TotalTime>346</o:TotalTime>
   <o:Created>2012-12-21T20:13:00Z</o:Created>
-  <o:LastSaved>2012-12-22T19:16:00Z</o:LastSaved>
+  <o:LastSaved>2012-12-23T18:47:00Z</o:LastSaved>
   <o:Pages>1</o:Pages>
-  <o:Words>365</o:Words>
-  <o:Characters>2081</o:Characters>
+  <o:Words>428</o:Words>
+  <o:Characters>2441</o:Characters>
   <o:Company>T-Hrvatski Telekom</o:Company>
-  <o:Lines>17</o:Lines>
-  <o:Paragraphs>4</o:Paragraphs>
-  <o:CharactersWithSpaces>2442</o:CharactersWithSpaces>
+  <o:Lines>20</o:Lines>
+  <o:Paragraphs>5</o:Paragraphs>
+  <o:CharactersWithSpaces>2864</o:CharactersWithSpaces>
   <o:Version>12.00</o:Version>
  </o:DocumentProperties>
 </xml><![endif]-->
@@ -33,6 +33,8 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <!--[if gte mso 9]><xml>
  <w:WordDocument>
   <w:Zoom>120</w:Zoom>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
   <w:TrackMoves>false</w:TrackMoves>
   <w:TrackFormatting/>
   <w:PunctuationKerning/>
@@ -332,13 +334,6 @@ xmlns="http://www.w3.org/TR/REC-html40">
 <!--
  /* Font Definitions */
  @font-face
-	{font-family:Wingdings;
-	panose-1:5 0 0 0 0 0 0 0 0 0;
-	mso-font-charset:2;
-	mso-generic-font-family:auto;
-	mso-font-pitch:variable;
-	mso-font-signature:0 268435456 0 0 -2147483648 0;}
-@font-face
 	{font-family:"Cambria Math";
 	panose-1:2 4 5 3 5 4 6 3 2 4;
 	mso-font-charset:1;
@@ -687,6 +682,12 @@ span.TitleChar
 	mso-themeshade:191;
 	letter-spacing:.25pt;
 	mso-font-kerning:14.0pt;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
 .MsoChpDefault
 	{mso-style-type:export-only;
 	mso-default-props:yes;
@@ -728,6 +729,34 @@ div.WordSection1
 	mso-level-number-position:left;
 	text-indent:-18.0pt;
 	font-family:"Courier New";}
+@list l0:level3
+	{mso-level-tab-stop:108.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:144.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level5
+	{mso-level-tab-stop:180.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level6
+	{mso-level-tab-stop:216.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:252.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level8
+	{mso-level-tab-stop:288.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
+@list l0:level9
+	{mso-level-tab-stop:324.0pt;
+	mso-level-number-position:left;
+	text-indent:-18.0pt;}
 ol
 	{margin-bottom:0cm;}
 ul
@@ -757,7 +786,7 @@ ul
 	mso-hansi-theme-font:minor-latin;}
 </style>
 <![endif]--><!--[if gte mso 9]><xml>
- <o:shapedefaults v:ext="edit" spidmax="3074"/>
+ <o:shapedefaults v:ext="edit" spidmax="4098"/>
 </xml><![endif]--><!--[if gte mso 9]><xml>
  <o:shapelayout v:ext="edit">
   <o:idmap v:ext="edit" data="1"/>
@@ -775,15 +804,17 @@ mso-border-bottom-themecolor:accent1;padding:0cm 0cm 4.0pt 0cm'>
 
 </div>
 
-<h1><span lang=EN-GB style='mso-ansi-language:EN-GB'>2012.12.19.<o:p></o:p></span></h1>
+<h1><span class=GramE><span lang=EN-GB style='mso-ansi-language:EN-GB'>2012.12.19.</span></span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></h1>
 
-<p class=MsoNormal><span lang=EN-GB style='mso-ansi-language:EN-GB'>Decided on
-program structure. One module will be used to create an alignment file with
-noisy columns removed. Another script will take an alignment file and ref tree,
-compute the noisy tree and one with reduced noise and calculate distances of
-the two trees from the reference tree. The script above this one should call
-the first for every alignment file in a folder, file names are expected to
-follow a certain convention. <o:p></o:p></span></p>
+<p class=MsoNormal><span class=GramE><span lang=EN-GB style='mso-ansi-language:
+EN-GB'>Decided on program structure.</span></span><span lang=EN-GB
+style='mso-ansi-language:EN-GB'> One module will be used to create an alignment
+file with noisy columns removed. Another script will take an alignment file and
+ref tree, compute the noisy tree and one with reduced noise and calculate
+distances of the two trees from the reference tree. The script above this one
+should call the first for every alignment file in a folder, file names are
+expected to follow a certain convention. <o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-GB style='mso-ansi-language:EN-GB'>The first
 version of the script to remove noisy columns has been written and needs
@@ -791,8 +822,9 @@ testing. <o:p></o:p></span></p>
 
 <h1><span lang=EN-GB style='mso-ansi-language:EN-GB'>2012.12.20<o:p></o:p></span></h1>
 
-<p class=MsoNormal><span lang=EN-GB style='mso-ansi-language:EN-GB'>Defined
-relevant test cases. <o:p></o:p></span></p>
+<p class=MsoNormal><span class=GramE><span lang=EN-GB style='mso-ansi-language:
+EN-GB'>Defined relevant test cases.</span></span><span lang=EN-GB
+style='mso-ansi-language:EN-GB'> <o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'><span
 lang=EN-GB style='mso-ansi-language:EN-GB'>Test case 1: an alignment with no
@@ -806,7 +838,7 @@ lang=EN-GB style='mso-ansi-language:EN-GB'><o:p>&nbsp;</o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'><span
 lang=EN-GB style='mso-ansi-language:EN-GB'>Test case 2: an alignment with
-columns with more than 50% indels<o:p></o:p></span></p>
+columns with more than 50% <span class=SpellE>indels</span><o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'><span
 lang=EN-GB style='mso-ansi-language:EN-GB'>Expected result: an alignment with
@@ -855,19 +887,19 @@ all columns are considered noisy<o:p></o:p></span></p>
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'><span
 lang=EN-GB style='mso-ansi-language:EN-GB'>Expected result: an error<o:p></o:p></span></p>
 
-<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'><span
-lang=EN-GB style='mso-ansi-language:EN-GB'><o:p>&nbsp;</o:p></span></p>
-
-<h1><span lang=EN-GB style='mso-ansi-language:EN-GB'>2012.12.21.<o:p></o:p></span></h1>
+<h1><span class=GramE><span lang=EN-GB style='mso-ansi-language:EN-GB'>2012.12.21.</span></span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></h1>
 
 <p class=MsoNormal><span lang=EN-GB style='mso-ansi-language:EN-GB'>Test cases
 have been created. <o:p></o:p></span></p>
 
-<h1><span lang=EN-GB style='mso-ansi-language:EN-GB'>2012.12.22.<o:p></o:p></span></h1>
+<h1><span class=GramE><span lang=EN-GB style='mso-ansi-language:EN-GB'>2012.12.22.</span></span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'><o:p></o:p></span></h1>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'><span
-lang=EN-GB style='mso-ansi-language:EN-GB'>noiseReduce script tested, corrected
-and functional. Scripts made for automatically testing it as well. <o:p></o:p></span></p>
+class=SpellE><span class=GramE><span lang=EN-GB style='mso-ansi-language:EN-GB'>noiseReduce</span></span></span><span
+lang=EN-GB style='mso-ansi-language:EN-GB'> script tested, corrected and
+functional. Scripts made for automatically testing it as well. <o:p></o:p></span></p>
 
 <p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'><span
 lang=EN-GB style='mso-ansi-language:EN-GB'>The script still needs commenting,
@@ -878,57 +910,59 @@ another script. <o:p></o:p></span></p>
 lang=EN-GB style='mso-ansi-language:EN-GB'>The assumptions under which the
 script works correctly:<o:p></o:p></span></p>
 
-<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraphCxSpFirst style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 lang=EN-GB style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
 Symbol;mso-ansi-language:EN-GB'><span style='mso-list:Ignore'>·<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=EN-GB style='mso-ansi-language:EN-GB'>the
 command line arguments are valid file paths<o:p></o:p></span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 lang=EN-GB style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
 Symbol;mso-ansi-language:EN-GB'><span style='mso-list:Ignore'>·<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=EN-GB style='mso-ansi-language:EN-GB'>the
-input file is in fasta format<o:p></o:p></span></p>
+input file is in <span class=SpellE>fasta</span> format<o:p></o:p></span></p>
 
-<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 lang=EN-GB style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
 Symbol;mso-ansi-language:EN-GB'><span style='mso-list:Ignore'>·<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=EN-GB style='mso-ansi-language:EN-GB'>the
-input file is a multialignment file<o:p></o:p></span></p>
+input file is a <span class=SpellE>multialignment</span> file<o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;mso-add-space:
-auto;text-indent:-18.0pt;mso-list:l0 level2 lfo1'><![if !supportLists]><span
+auto;text-indent:-18.0pt;mso-list:l0 level2 lfo2'><![if !supportLists]><span
 lang=EN-GB style='font-family:"Courier New";mso-fareast-font-family:"Courier New";
 mso-ansi-language:EN-GB'><span style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=EN-GB style='mso-ansi-language:EN-GB'>the
 script should not cause an error if at least 1 sequence is present<o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;mso-add-space:
-auto;text-indent:-18.0pt;mso-list:l0 level2 lfo1'><![if !supportLists]><span
+auto;text-indent:-18.0pt;mso-list:l0 level2 lfo2'><![if !supportLists]><span
 lang=EN-GB style='font-family:"Courier New";mso-fareast-font-family:"Courier New";
 mso-ansi-language:EN-GB'><span style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=EN-GB style='mso-ansi-language:EN-GB'>for
 a meaningful result, at least 3 sequences should be present (perhaps 2, but
-that is a pairwise alignment instead of a multialignment)<o:p></o:p></span></p>
+that is a <span class=SpellE>pairwise</span> alignment instead of a <span
+class=SpellE>multialignment</span>)<o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;mso-add-space:
-auto;text-indent:-18.0pt;mso-list:l0 level2 lfo1'><![if !supportLists]><span
+auto;text-indent:-18.0pt;mso-list:l0 level2 lfo2'><![if !supportLists]><span
 lang=EN-GB style='font-family:"Courier New";mso-fareast-font-family:"Courier New";
 mso-ansi-language:EN-GB'><span style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
 </span></span></span><![endif]><span lang=EN-GB style='mso-ansi-language:EN-GB'>all
 the sequences in the file are of the same length<o:p></o:p></span></p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:72.0pt;mso-add-space:
-auto;text-indent:-18.0pt;mso-list:l0 level2 lfo1'><![if !supportLists]><span
+auto;text-indent:-18.0pt;mso-list:l0 level2 lfo2'><![if !supportLists]><span
 lang=EN-GB style='font-family:"Courier New";mso-fareast-font-family:"Courier New";
 mso-ansi-language:EN-GB'><span style='mso-list:Ignore'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;
-</span></span></span><![endif]><span lang=EN-GB style='mso-ansi-language:EN-GB'>indels
-are specified by the following character ‘-‘<o:p></o:p></span></p>
+</span></span></span><![endif]><span class=SpellE><span lang=EN-GB
+style='mso-ansi-language:EN-GB'>indels</span></span><span lang=EN-GB
+style='mso-ansi-language:EN-GB'> are specified by the following character ‘-‘<o:p></o:p></span></p>
 
-<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l0 level1 lfo1'><![if !supportLists]><span
+<p class=MsoListParagraphCxSpLast style='text-indent:-18.0pt;mso-list:l0 level1 lfo2'><![if !supportLists]><span
 lang=EN-GB style='font-family:Symbol;mso-fareast-font-family:Symbol;mso-bidi-font-family:
 Symbol;mso-ansi-language:EN-GB'><span style='mso-list:Ignore'>·<span
 style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -941,8 +975,16 @@ checked by the validation script. <o:p></o:p></span></p>
 <p class=MsoNormal><span lang=EN-GB style='mso-ansi-language:EN-GB'>Readme file
 added to give instructions about how to use the scripts to reproduce results. <o:p></o:p></span></p>
 
-<p class=MsoNormal style='margin-bottom:0cm;margin-bottom:.0001pt'><span
-lang=EN-GB style='mso-ansi-language:EN-GB'><o:p>&nbsp;</o:p></span></p>
+<h1><span lang=EN-GB style='mso-ansi-language:EN-GB'>2012.12.23<o:p></o:p></span></h1>
+
+<p class=MsoNormal><span lang=EN-GB style='mso-ansi-language:EN-GB'>After
+several unsuccessful attempts at installing the <span class=SpellE>FastPhylo</span>
+package with <span class=SpellE>fastprot</span> the previous day, the decision
+to use <span class=SpellE>phylip</span> instead has been made. A module for
+calculating a noisy and a <span class=SpellE>denoised</span> tree based on a
+multiple alignment <span class=SpellE>fasta</span> file has been created and
+tested using basic tests. For the case when all columns are removed during
+noise removal, an error is thrown and nothing written to the output. <o:p></o:p></span></p>
 
 <p class=MsoNormal><span lang=EN-GB style='mso-ansi-language:EN-GB'><o:p>&nbsp;</o:p></span></p>
 
