@@ -34,7 +34,7 @@ treeNoisyOut = open('results/2012-12-23/treecalc_control/onlynoiseTreeNoisy', 'w
 treeDenoisedOut = open('results/2012-12-23/treecalc_control/onlynoiseTreeDenoised', 'w')
 try:
     treeCalc.calcTrees('data/2012-12-23/treecalc_control/only_noise.fa', treeNoisyOut, treeDenoisedOut)
-except StandardError as e:
+except RuntimeError as e:
     print >> sys.stderr, e.message
 treeNoisyOut.close()
 treeDenoisedOut.close()
