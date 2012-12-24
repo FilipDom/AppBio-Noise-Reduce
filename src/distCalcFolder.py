@@ -33,18 +33,18 @@ def main(args):
         filenamePrefix = 's' + '{:03d}'.format(i)
         
         treeNoisyName = filenamePrefix + 'Noisy.tree'
-        treeNoisyPath = os.join.path(dataDir, treeNoisyName)
+        treeNoisyPath = os.path.join(dataDir, treeNoisyName)
         if not os.path.exists(treeNoisyPath):
             continue
         treeNoisy = dendropy.Tree.get_from_path(treeNoisyPath, TREE_FORMAT)
         distNoisy = treeRef.symmetric_difference(treeNoisy)
 
         treeDenoisedName = filenamePrefix + 'Denoised.tree'
-        treeDenoisedPath = os.join.path(dataDir, treeDenoisedName)
+        treeDenoisedPath = os.path.join(dataDir, treeDenoisedName)
         treeDenoised = dendropy.Tree.get_from_path(treeDenoisedPath, TREE_FORMAT)
         distDenoised = treeRef.symmetric_difference(treeDenoised)
 
-        print >> outFile, 'filenamePrefix', '\t', distNoisy, '\t', distDenoised
+        print >> outFile, filenamePrefix, '\t', distNoisy, '\t', distDenoised
 
     outFile.close()
     

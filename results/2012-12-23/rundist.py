@@ -13,4 +13,4 @@ for endDir in endDirs:
     refTreePath = os.path.join(refTreeBaseDir, endDir, refTreeName)
     outPath = os.path.join(outDir, endDir)
     subprocess.call(['python', 'src/distCalcFolder.py', dataDir, refTreePath,
-                     '2', outPath])
+                     '300', outPath])
