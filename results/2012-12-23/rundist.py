@@ -1,3 +1,4 @@
+import os
 import subprocess
 
 dataBaseDir = 'results/2012-12-23/trees'
@@ -8,5 +9,8 @@ outDir = 'results/2012-12-23/dist'
 
 for endDir in endDirs:
     dataDir = os.path.join(dataBaseDir, endDir)
-    outPath = os.path.join(outBaseDir, endDir)
-    subprocess.call(['python', 'src/distCalcFolder.py', dataDir, outDir, '300'])
+    refTreeName = endDir + '.tree'
+    refTreePath = os.path.join(refTreeBaseDir, endDir, refTreeName)
+    outPath = os.path.join(outDir, endDir)
+    subprocess.call(['python', 'src/distCalcFolder.py', dataDir, refTreePath,
+                     '2', outPath])
