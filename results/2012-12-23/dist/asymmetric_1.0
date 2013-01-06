@@ -1,4 +1,4 @@
-filename	d(ref,noisy)	d(ref,denoised)
+filename	d_noisy	d_denoised
 s001 	16 	16
 s002 	22 	22
 s003 	22 	22

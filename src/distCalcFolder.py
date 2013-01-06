@@ -21,7 +21,7 @@ def main(args):
 
     TREE_FORMAT = 'newick'
     treeRef = dendropy.Tree.get_from_path(refTreeFilename, TREE_FORMAT)
-    HEADER = 'filename\td(ref,noisy)\td(ref,denoised)'
+    HEADER = 'filename\td_noisy\td_denoised'
     print >> outFile, HEADER
     if (isStdoutFree):
         print 'Processing ' + dataDir
