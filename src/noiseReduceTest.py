@@ -1,5 +1,10 @@
 #! /usr/bin/env python
 
+'''
+Performs noise reduction on control multialignments and writes output to the 
+specified folder. 
+'''
+
 import subprocess
 import os
 import sys

@@ -1,3 +1,11 @@
+#! /usr/bin/env python
+
+'''
+Generates noisy and noisy reduced trees for all the alignments in all the data sets. 
+The results are saved in the trees subfolder within a subfolder with the same name
+as the data set folder. 
+'''
+
 import os
 import subprocess
 

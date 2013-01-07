@@ -35,7 +35,14 @@ def main(args):
     outStream.close()    
 
 def denoise(entries):
-
+	'''
+	Performs noise reduction for the given protein multialignment specified as 
+	a list of (accession, sequence) pairs. Columns with a high number of indels, 
+	high number of unique amino acids and a in which no amino acid appears more
+	than twice are removed. 
+	IN: entries - the multiple sequence alignment
+	OUT: the same multiple sequence alignment with noisy columns removed
+	'''
     seqLenMax = len(entries[0][1])
     #seqLenMax = 0
     #for entry in entries:
@@ -52,6 +59,13 @@ def denoise(entries):
     return entriesDenoised
 
 def removeHighIndel(entries, columns):
+	'''
+	From the multiple sequence alignment in entries, reads the columns specified 
+	by indices in columns and removes those for which the number of indels is 
+	greater than 50%
+	IN: entries - the multiple sequence alignment
+		columns - column indices which to examine
+	'''
     entryCount = len(entries)
     THRESHOLD_RATIO = 0.5
     colRemove = list()
@@ -69,6 +83,13 @@ def removeHighIndel(entries, columns):
         columns.remove(col)
 
 def removeHighUnique(entries, columns):
+	'''
+	From the multiple sequence alignment in entries, reads the columns specified 
+	by indices in columns and removes those in which the number of unique amino 
+	acids is greater than 50%. Indels are not counted. 
+	IN: entries - the multiple sequence alignment
+		columns - column indices which to examine
+	'''
     entryCount = len(entries)
     THRESHOLD_RATIO = 0.5
     colRemove = list()
@@ -88,6 +109,13 @@ def removeHighUnique(entries, columns):
 
 
 def removeLowFreqs(entries, columns):
+	'''
+	From the multiple sequence alignment in entries, reads the columns specified 
+	by indices in columns and removes those where no amino acid appears more 
+	than twice. 
+	IN: entries - the multiple sequence alignment
+		columns - column indices which to examine
+	'''
     MIN_COUNT = 3
     colRemove = list()
     for col in columns:

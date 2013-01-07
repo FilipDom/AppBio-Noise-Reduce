@@ -3,7 +3,14 @@ import subprocess
 from Bio import SeqIO
 
 def calcTrees(inFilePath, treeNoisyOut, treeDenoisedOut):
-    
+    '''
+	Inferrs both the tree from the specified protein multialignment as well as
+	the tree from the same alignment with reduced noise. 
+	IN: inFilePath - file containing the protein multialignment
+		treeNoisyOut - file handle where the noisy tree is written
+		treeDenoisedOut - file handle where the denoised tree is written
+	'''
+	
     denoisedFileName = 'tmp_denoised.fa'
     try:
         subprocess.check_call(['python', 'src/noiseReduce.py', inFilePath, denoisedFileName])
@@ -18,6 +25,13 @@ def calcTrees(inFilePath, treeNoisyOut, treeDenoisedOut):
     subprocess.call(['rm', denoisedFileName])
 
 def calcTree(inFilePath, outFile):
+	'''
+	Inferrs a tree from the protein multialignment in the specified file and
+	writes the results to the specified output. This method used the phylip
+	programs protdist and neighbor. 
+	IN: inFilePath - file containing the protein multialignment
+		outFile - file handle where output is written
+	'''
     
     seqRecs = SeqIO.parse(inFilePath, 'fasta')
     entries = list()

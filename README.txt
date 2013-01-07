@@ -12,7 +12,8 @@ and the path and enviromental variables need to be set so that a call such as
 
 "python <script_name>"
 
-works. 
+works. Note, the scripts were not written on a unix/linux-like system, so they
+are not marked as executable. 
 
 The scripts used for an individual experiment are in the results folder, under 
 a particular experiment subfolder. If multiple scripts are found, then a runall 

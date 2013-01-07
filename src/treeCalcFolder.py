@@ -44,4 +44,15 @@ def main(args):
         treeDenoisedOut.close()
 
 args = sys.argv[1:]
+USAGE = '''
+Program usage:\n
+    distCalcFolder.py <folder_with_multialignments> <folder_where_to_write_trees> <data_count>\n
+Folder with multialignment files should contain file names of the format\n
+\ts###.align.1.msl\n
+where ### represents a three digit number. As a conseqeunce, at the moment, \n
+only numbers up to 999 are supported.\n
+'''
+if (len(args) < 2 or len(args) > 3):
+    print USAGE
+    sys.exit(2)
 main(args)

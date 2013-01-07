@@ -1,3 +1,10 @@
+#! /usr/bin/env python
+
+'''
+Calculates the distance between the respective noise and denoised trees for 
+each alignment. 
+'''
+
 import os
 import subprocess
 
